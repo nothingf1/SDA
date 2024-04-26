@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+correlation_matrix = pd.DataFrame({
+    'freqx': freqx,
+    'freqx_dx': freqx_dx,
+    'freqx_dx_dx': freqx_dx_dx,
+    'freqy': freqy,
+    'freqy_dy': freqy_dy,
+    'freqy_dy_dy': freqy_dy_dy,
+    'freqx_dx_dy': freqx_dx_dy, 
+    'freqy_dx_dy': freqy_dx_dy
+}).corr()
+
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
+plt.title('Correlation Heatmap')
+plt.show()
